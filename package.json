@@ -1,0 +1,26 @@
+{
+  "name": "docs",
+  "version": "1.0.0",
+  "description": "NamedFramework Docs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/namedframework/docs.git"
+  },
+  "keywords": [
+    "NameFramework",
+    "Docs"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/namedframework/docs/issues"
+  },
+  "homepage": "https://github.com/namedframework/docs#readme",
+  "devDependencies": {
+    "docpress": "0.7.1"
+  }
+}
