@@ -1,5 +1,9 @@
 {
   "docs": "src",
   "dist": "docs",
-  "github": "namedframework/framework"
+  "github": "namedframework/framework",
+  "googleAnalytics": {
+    "id": "UA-108060250-2",
+    "domain": "docs.namedframework.com"
+  }
 }
