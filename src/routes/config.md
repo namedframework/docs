@@ -57,7 +57,7 @@ module.exports = {
 module.exports = {
   _config: {
     params: 'id', // params will not work if url is present
-    url: "/news/details/:slug/:id", // provide full url with params
+    url: "/news/:id/comment/:id", // provide full url with params
   },
 
   get: function (req, res, next) {
