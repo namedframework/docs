@@ -388,6 +388,7 @@
     "src/routes/index.md": "routes/index.html",
     "src/routes/config.md": "routes/config.html",
     "src/boot/scripts.md": "boot/scripts.html",
-    "src/utils/index.md": "utils/index.html"
+    "src/utils/index.md": "utils/index.html",
+    "src/CNAME": "CNAME"
   }
 }
