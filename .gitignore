@@ -59,3 +59,5 @@ typings/
 
 # docpress
 _docpress
+
+package-lock.json
