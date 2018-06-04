@@ -2,23 +2,392 @@
   "toc": {
     "sections": [
       {
-        "title": "Documentation",
+        "title": "Named Framework",
         "source": "README.md",
-        "expand": true,
         "url": "index.html",
-        "slug": "index"
+        "slug": "index",
+        "headings": [
+          {
+            "title": "Features",
+            "depth": 2,
+            "id": "features"
+          },
+          {
+            "title": "Built With",
+            "depth": 2,
+            "id": "built-with"
+          },
+          {
+            "title": "Directory structure",
+            "depth": 2,
+            "id": "directory-structure"
+          }
+        ]
+      },
+      {
+        "title": "Getting started",
+        "sections": [
+          {
+            "title": "Quickstart",
+            "source": "src/getting-started/quickstart.md",
+            "url": "getting-started/quickstart.html",
+            "slug": "getting-startedquickstart"
+          },
+          {
+            "title": "Installation",
+            "source": "src/getting-started/install.md",
+            "url": "getting-started/install.html",
+            "slug": "getting-startedinstall"
+          }
+        ]
+      },
+      {
+        "title": "Configuration",
+        "sections": [
+          {
+            "title": "Express",
+            "source": "src/configuration/express.md",
+            "url": "configuration/express.html",
+            "slug": "configurationexpress",
+            "headings": [
+              {
+                "title": "config/server/express.js",
+                "depth": 2,
+                "id": "configserverexpress.js"
+              },
+              {
+                "title": "config/server/httperr.js",
+                "depth": 2,
+                "id": "configserverhttperr.js"
+              }
+            ]
+          },
+          {
+            "title": "Config Files",
+            "source": "src/configuration/config-files.md",
+            "url": "configuration/config-files.html",
+            "slug": "configurationconfig-files"
+          },
+          {
+            "title": "Local Config",
+            "source": "src/configuration/local-js.md",
+            "url": "configuration/local-js.html",
+            "slug": "configurationlocal-js",
+            "headings": [
+              {
+                "title": "config/local.js",
+                "depth": 2,
+                "id": "configlocal.js"
+              }
+            ]
+          },
+          {
+            "title": "Middlewares",
+            "source": "src/configuration/middleware.md",
+            "url": "configuration/middleware.html",
+            "slug": "configurationmiddleware",
+            "headings": [
+              {
+                "title": "config/server/middlewares.js",
+                "depth": 2,
+                "id": "configservermiddlewares.js"
+              },
+              {
+                "title": "Declaring middleware",
+                "depth": 2,
+                "id": "declaring-middleware"
+              },
+              {
+                "title": "Declaring closure middleware",
+                "depth": 2,
+                "id": "declaring-closure-middleware"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Mongoose",
+        "sections": [
+          {
+            "title": "Schema",
+            "source": "src/mongoose/schema.md",
+            "url": "mongoose/schema.html",
+            "slug": "mongooseschema"
+          },
+          {
+            "title": "Plugins",
+            "source": "src/mongoose/plugins.md",
+            "url": "mongoose/plugins.html",
+            "slug": "mongooseplugins"
+          }
+        ]
+      },
+      {
+        "title": "Routes",
+        "sections": [
+          {
+            "title": "Create",
+            "source": "src/routes/index.md",
+            "url": "routes/index.html",
+            "slug": "routes",
+            "headings": [
+              {
+                "title": "Get Route",
+                "depth": 2,
+                "id": "get-route"
+              },
+              {
+                "title": "Post Route",
+                "depth": 2,
+                "id": "post-route"
+              },
+              {
+                "title": "Other routes",
+                "depth": 2,
+                "id": "other-routes"
+              }
+            ]
+          },
+          {
+            "title": "Configuration",
+            "source": "src/routes/config.md",
+            "url": "routes/config.html",
+            "slug": "routesconfig",
+            "headings": [
+              {
+                "title": "Route Parameters",
+                "depth": 2,
+                "id": "route-parameters"
+              },
+              {
+                "title": "Route Middlewares",
+                "depth": 2,
+                "id": "route-middlewares"
+              },
+              {
+                "title": "Method specific Middlewares",
+                "depth": 2,
+                "id": "method-specific-middlewares"
+              },
+              {
+                "title": "Override route url",
+                "depth": 2,
+                "id": "override-route-url"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Boot Scripts",
+        "sections": [
+          {
+            "title": "Create",
+            "source": "src/boot/scripts.md",
+            "url": "boot/scripts.html",
+            "slug": "bootscripts"
+          }
+        ]
+      },
+      {
+        "title": "Utils",
+        "sections": [
+          {
+            "title": "Create",
+            "source": "src/utils/index.md",
+            "url": "utils/index.html",
+            "slug": "utils"
+          }
+        ]
       }
     ]
   },
   "index": {
     "index.html": {
       "source": "README.md",
-      "title": "Documentation",
-      "pageTitle": "Documentation",
-      "slug": "index"
+      "title": "Named Framework",
+      "pageTitle": "Named Framework",
+      "slug": "index",
+      "headings": [
+        {
+          "title": "Features",
+          "depth": 2,
+          "id": "features"
+        },
+        {
+          "title": "Built With",
+          "depth": 2,
+          "id": "built-with"
+        },
+        {
+          "title": "Directory structure",
+          "depth": 2,
+          "id": "directory-structure"
+        }
+      ]
+    },
+    "getting-started/quickstart.html": {
+      "source": "src/getting-started/quickstart.md",
+      "title": "Quickstart - Named Framework",
+      "pageTitle": "Quickstart",
+      "slug": "getting-startedquickstart"
+    },
+    "getting-started/install.html": {
+      "source": "src/getting-started/install.md",
+      "title": "Installation - Named Framework",
+      "pageTitle": "Installation",
+      "slug": "getting-startedinstall"
+    },
+    "configuration/express.html": {
+      "source": "src/configuration/express.md",
+      "title": "Express - Named Framework",
+      "pageTitle": "Express",
+      "slug": "configurationexpress",
+      "headings": [
+        {
+          "title": "config/server/express.js",
+          "depth": 2,
+          "id": "configserverexpress.js"
+        },
+        {
+          "title": "config/server/httperr.js",
+          "depth": 2,
+          "id": "configserverhttperr.js"
+        }
+      ]
+    },
+    "configuration/config-files.html": {
+      "source": "src/configuration/config-files.md",
+      "title": "Config Files - Named Framework",
+      "pageTitle": "Config Files",
+      "slug": "configurationconfig-files"
+    },
+    "configuration/local-js.html": {
+      "source": "src/configuration/local-js.md",
+      "title": "Local Config - Named Framework",
+      "pageTitle": "Local Config",
+      "slug": "configurationlocal-js",
+      "headings": [
+        {
+          "title": "config/local.js",
+          "depth": 2,
+          "id": "configlocal.js"
+        }
+      ]
+    },
+    "configuration/middleware.html": {
+      "source": "src/configuration/middleware.md",
+      "title": "Middlewares - Named Framework",
+      "pageTitle": "Middlewares",
+      "slug": "configurationmiddleware",
+      "headings": [
+        {
+          "title": "config/server/middlewares.js",
+          "depth": 2,
+          "id": "configservermiddlewares.js"
+        },
+        {
+          "title": "Declaring middleware",
+          "depth": 2,
+          "id": "declaring-middleware"
+        },
+        {
+          "title": "Declaring closure middleware",
+          "depth": 2,
+          "id": "declaring-closure-middleware"
+        }
+      ]
+    },
+    "mongoose/schema.html": {
+      "source": "src/mongoose/schema.md",
+      "title": "Schema - Named Framework",
+      "pageTitle": "Schema",
+      "slug": "mongooseschema"
+    },
+    "mongoose/plugins.html": {
+      "source": "src/mongoose/plugins.md",
+      "title": "Plugins - Named Framework",
+      "pageTitle": "Plugins",
+      "slug": "mongooseplugins"
+    },
+    "routes/index.html": {
+      "source": "src/routes/index.md",
+      "title": "Create - Named Framework",
+      "pageTitle": "Create",
+      "slug": "routes",
+      "headings": [
+        {
+          "title": "Get Route",
+          "depth": 2,
+          "id": "get-route"
+        },
+        {
+          "title": "Post Route",
+          "depth": 2,
+          "id": "post-route"
+        },
+        {
+          "title": "Other routes",
+          "depth": 2,
+          "id": "other-routes"
+        }
+      ]
+    },
+    "routes/config.html": {
+      "source": "src/routes/config.md",
+      "title": "Configuration - Named Framework",
+      "pageTitle": "Configuration",
+      "slug": "routesconfig",
+      "headings": [
+        {
+          "title": "Route Parameters",
+          "depth": 2,
+          "id": "route-parameters"
+        },
+        {
+          "title": "Route Middlewares",
+          "depth": 2,
+          "id": "route-middlewares"
+        },
+        {
+          "title": "Method specific Middlewares",
+          "depth": 2,
+          "id": "method-specific-middlewares"
+        },
+        {
+          "title": "Override route url",
+          "depth": 2,
+          "id": "override-route-url"
+        }
+      ]
+    },
+    "boot/scripts.html": {
+      "source": "src/boot/scripts.md",
+      "title": "Create - Named Framework",
+      "pageTitle": "Create",
+      "slug": "bootscripts"
+    },
+    "utils/index.html": {
+      "source": "src/utils/index.md",
+      "title": "Create - Named Framework",
+      "pageTitle": "Create",
+      "slug": "utils"
     }
   },
   "sources": {
-    "README.md": "index.html"
+    "README.md": "index.html",
+    "src/getting-started/quickstart.md": "getting-started/quickstart.html",
+    "src/getting-started/install.md": "getting-started/install.html",
+    "src/configuration/express.md": "configuration/express.html",
+    "src/configuration/config-files.md": "configuration/config-files.html",
+    "src/configuration/local-js.md": "configuration/local-js.html",
+    "src/configuration/middleware.md": "configuration/middleware.html",
+    "src/mongoose/schema.md": "mongoose/schema.html",
+    "src/mongoose/plugins.md": "mongoose/plugins.html",
+    "src/routes/index.md": "routes/index.html",
+    "src/routes/config.md": "routes/config.html",
+    "src/boot/scripts.md": "boot/scripts.html",
+    "src/utils/index.md": "utils/index.html"
   }
 }

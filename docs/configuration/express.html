@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../assets/style.css?t=615badd5">
+    <script src="../assets/script.js?t=42463e55"></script>
+    <title>Express - Named Framework</title>
+    <meta name="viewport" content="width=device-width">
+    <script>if (false || window.location.hostname.indexOf("docs.namedframework.com") === window.location.hostname.length - 23) {
+        (function(d,o,c,p,r,e,s){d['GoogleAnalyticsObject']=r;d[r]=d[r]||function(){(d[r].q=d[r].q||[]).push(arguments)},d[r].l=1*new Date();e=o.createElement(c),s=o.getElementsByTagName(c)[0];e.async=1;e.src=p;s.parentNode.insertBefore(e,s)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create',"UA-108060250-2",'auto')
+      }
+    </script>
+  </head>
+  <body class="-menu-visible">
+    <div class="doc-layout">
+      <div class="toggle menu-toggle js-menu-toggle"></div>
+      <div class="menu toc-menu">
+        <li class="menu-item -level-0 -parent">
+          <ul class="submenu">
+            <li class="menu-item -level-1"><a class="link title  link-index" href="../index.html">Named Framework</a>
+            </li>
+            <li class="menu-item -level-1 -parent"><span class="title">Getting started</span>
+              <ul class="submenu">
+                <li class="menu-item -level-2"><a class="link title  link-getting-startedquickstart" href="../getting-started/quickstart.html">Quickstart</a>
+                </li>
+                <li class="menu-item -level-2"><a class="link title  link-getting-startedinstall" href="../getting-started/install.html">Installation</a>
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item -level-1 -parent"><span class="title">Configuration</span>
+              <ul class="submenu">
+                <li class="menu-item -level-2"><a class="link title -active link-configurationexpress" href="../configuration/express.html">Express</a>
+                  <ul class="headings heading-list">
+                    <li class="heading-item -depth-2"><a class="hlink link-configserverexpress.js" href="#configserverexpress.js">config/server/express.js</a>
+                    </li>
+                    <li class="heading-item -depth-2"><a class="hlink link-configserverhttperr.js" href="#configserverhttperr.js">config/server/httperr.js</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="menu-item -level-2"><a class="link title  link-configurationconfig-files" href="../configuration/config-files.html">Config Files</a>
+                </li>
+                <li class="menu-item -level-2"><a class="link title  link-configurationlocal-js" href="../configuration/local-js.html">Local Config</a>
+                </li>
+                <li class="menu-item -level-2"><a class="link title  link-configurationmiddleware" href="../configuration/middleware.html">Middlewares</a>
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item -level-1 -parent"><span class="title">Mongoose</span>
+              <ul class="submenu">
+                <li class="menu-item -level-2"><a class="link title  link-mongooseschema" href="../mongoose/schema.html">Schema</a>
+                </li>
+                <li class="menu-item -level-2"><a class="link title  link-mongooseplugins" href="../mongoose/plugins.html">Plugins</a>
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item -level-1 -parent"><span class="title">Routes</span>
+              <ul class="submenu">
+                <li class="menu-item -level-2"><a class="link title  link-routes" href="../routes/index.html">Create</a>
+                </li>
+                <li class="menu-item -level-2"><a class="link title  link-routesconfig" href="../routes/config.html">Configuration</a>
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item -level-1 -parent"><span class="title">Boot Scripts</span>
+              <ul class="submenu">
+                <li class="menu-item -level-2"><a class="link title  link-bootscripts" href="../boot/scripts.html">Create</a>
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item -level-1 -parent"><span class="title">Utils</span>
+              <ul class="submenu">
+                <li class="menu-item -level-2"><a class="link title  link-utils" href="../utils/index.html">Create</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </div>
+      <div class="body page-configurationexpress">
+        <div class="header-nav">
+          <div class="right"><a class="iconlink" href="https://github.com/namedframework/framework" data-title="namedframework/framework">
+              <!-- span.title Open in GitHub--><span class="icon -github"></span></a>
+          </div>
+        </div>
+        <div class="markdown-body"><h1 id="express-configuration">Express Configuration</h1>
+<h2 id="configserverexpress.js">config/server/express.js</h2>
+<p><em>This file is called before loading routes and middlewares.</em></p>
+<pre><code class="lang-js"><span class="pl-c">// sample configuration file</span>
+<span class="pl-k">const</span> bodyParser = <span class="pl-c1">require</span>(<span class="pl-s">&apos;body-parser&apos;</span>);
+<span class="pl-k">const</span> lusca = <span class="pl-c1">require</span>(<span class="pl-s">&apos;lusca&apos;</span>);
+<span class="pl-k">const</span> connectFlash = <span class="pl-c1">require</span>(<span class="pl-s">&apos;connect-flash&apos;</span>);
+
+<span class="pl-k">const</span> session = <span class="pl-c1">require</span>(<span class="pl-s">&apos;express-session&apos;</span>);
+<span class="pl-k">const</span> MongoStore = <span class="pl-c1">require</span>(<span class="pl-s">&apos;connect-mongo&apos;</span>)(session);
+
+<span class="pl-c">// express app is passed as first argument</span>
+<span class="pl-c">// also available at Framework.app</span>
+<span class="pl-c1">module</span>.exports = <span class="hljs-function"><span class="pl-k">function</span> (<span class="hljs-params">app</span>) </span>{
+
+  app.use( lusca.xframe(<span class="pl-s">&apos;SAMEORIGIN&apos;</span>) );
+  app.use( lusca.xssProtection(<span class="pl-c1">true</span>) );
+
+
+  app.use( bodyParser.json() );
+  app.use( bodyParser.urlencoded({ <span class="hljs-attr">extended</span>: <span class="pl-c1">true</span> }) );
+
+  app.use(session({
+    <span class="hljs-attr">resave</span>: <span class="pl-c1">true</span>,
+    <span class="hljs-attr">saveUninitialized</span>: <span class="pl-c1">true</span>,
+    <span class="hljs-attr">secret</span>: Framework.config.session.secret,
+    <span class="hljs-attr">store</span>: <span class="pl-k">new</span> MongoStore({
+      <span class="hljs-attr">url</span>: Framework.config.session.uri || Framework.config.mongo.uri,
+      <span class="hljs-attr">autoReconnect</span>: <span class="pl-c1">true</span>,
+    }),
+  }));
+
+  app.use( lusca.csrf() );
+
+  app.use( connectFlash() );
+
+};
+
+</code></pre>
+<h2 id="configserverhttperr.js">config/server/httperr.js</h2>
+<p><em>This file is called after loading routes and middlewares.</em></p>
+<pre><code class="lang-js">
+<span class="pl-c">// this can be used to handle errors</span>
+<span class="pl-c1">module</span>.exports = <span class="hljs-function"><span class="pl-k">function</span> (<span class="hljs-params">app</span>) </span>{
+
+  <span class="pl-c">// 404 error</span>
+  app.use(<span class="hljs-function"><span class="pl-k">function</span>(<span class="hljs-params">req, res, next</span>) </span>{
+    <span class="pl-k">var</span> err = <span class="pl-k">new</span> <span class="pl-c1">Error</span>(<span class="pl-s">&apos;Not Found&apos;</span>);
+    err.status = <span class="hljs-number">404</span>;
+    next(err);
+  });
+
+  <span class="pl-c">// default</span>
+  app.use(<span class="hljs-function"><span class="pl-k">function</span>(<span class="hljs-params">err, req, res, next</span>) </span>{
+    <span class="pl-k">var</span> status = res.locals.status = err.status || <span class="hljs-number">500</span>;
+
+    <span class="pl-k">if</span> (app.get(<span class="pl-s">&apos;env&apos;</span>) === <span class="pl-s">&apos;development&apos;</span>){
+      res.locals.error = err;
+    }
+    res.status(status).render(<span class="pl-s">&apos;error&apos;</span>);
+  });
+
+};
+
+</code></pre>
+
+        </div>
+        <div class="footer-nav">
+          <div class="left"><a href="../getting-started/install.html"><span class="title">Installation</span></a></div>
+          <div class="right"><a href="../configuration/config-files.html"><span class="label">Next: </span><span class="title">Config Files</span></a></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

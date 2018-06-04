@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../assets/style.css?t=615badd5">
+    <script src="../assets/script.js?t=42463e55"></script>
+    <title>Schema - Named Framework</title>
+    <meta name="viewport" content="width=device-width">
+    <script>if (false || window.location.hostname.indexOf("docs.namedframework.com") === window.location.hostname.length - 23) {
+        (function(d,o,c,p,r,e,s){d['GoogleAnalyticsObject']=r;d[r]=d[r]||function(){(d[r].q=d[r].q||[]).push(arguments)},d[r].l=1*new Date();e=o.createElement(c),s=o.getElementsByTagName(c)[0];e.async=1;e.src=p;s.parentNode.insertBefore(e,s)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create',"UA-108060250-2",'auto')
+      }
+    </script>
+  </head>
+  <body class="-menu-visible">
+    <div class="doc-layout">
+      <div class="toggle menu-toggle js-menu-toggle"></div>
+      <div class="menu toc-menu">
+        <li class="menu-item -level-0 -parent">
+          <ul class="submenu">
+            <li class="menu-item -level-1"><a class="link title  link-index" href="../index.html">Named Framework</a>
+            </li>
+            <li class="menu-item -level-1 -parent"><span class="title">Getting started</span>
+              <ul class="submenu">
+                <li class="menu-item -level-2"><a class="link title  link-getting-startedquickstart" href="../getting-started/quickstart.html">Quickstart</a>
+                </li>
+                <li class="menu-item -level-2"><a class="link title  link-getting-startedinstall" href="../getting-started/install.html">Installation</a>
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item -level-1 -parent"><span class="title">Configuration</span>
+              <ul class="submenu">
+                <li class="menu-item -level-2"><a class="link title  link-configurationexpress" href="../configuration/express.html">Express</a>
+                </li>
+                <li class="menu-item -level-2"><a class="link title  link-configurationconfig-files" href="../configuration/config-files.html">Config Files</a>
+                </li>
+                <li class="menu-item -level-2"><a class="link title  link-configurationlocal-js" href="../configuration/local-js.html">Local Config</a>
+                </li>
+                <li class="menu-item -level-2"><a class="link title  link-configurationmiddleware" href="../configuration/middleware.html">Middlewares</a>
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item -level-1 -parent"><span class="title">Mongoose</span>
+              <ul class="submenu">
+                <li class="menu-item -level-2"><a class="link title -active link-mongooseschema" href="../mongoose/schema.html">Schema</a>
+                </li>
+                <li class="menu-item -level-2"><a class="link title  link-mongooseplugins" href="../mongoose/plugins.html">Plugins</a>
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item -level-1 -parent"><span class="title">Routes</span>
+              <ul class="submenu">
+                <li class="menu-item -level-2"><a class="link title  link-routes" href="../routes/index.html">Create</a>
+                </li>
+                <li class="menu-item -level-2"><a class="link title  link-routesconfig" href="../routes/config.html">Configuration</a>
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item -level-1 -parent"><span class="title">Boot Scripts</span>
+              <ul class="submenu">
+                <li class="menu-item -level-2"><a class="link title  link-bootscripts" href="../boot/scripts.html">Create</a>
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item -level-1 -parent"><span class="title">Utils</span>
+              <ul class="submenu">
+                <li class="menu-item -level-2"><a class="link title  link-utils" href="../utils/index.html">Create</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </div>
+      <div class="body page-mongooseschema">
+        <div class="header-nav">
+          <div class="right"><a class="iconlink" href="https://github.com/namedframework/framework" data-title="namedframework/framework">
+              <!-- span.title Open in GitHub--><span class="icon -github"></span></a>
+          </div>
+        </div>
+        <div class="markdown-body"><h1 id="mongoose-schema">Mongoose Schema</h1>
+<p>Mongoose schema are declared <strong>server/models/</strong> and are loaded recursively at <strong>Framework.models[filename]</strong>.</p>
+<p>Below declared models are accessible  at:</p>
+<ul>
+<li><strong>Framework.models.User</strong></li>
+<li><strong>Framework.models.NewsCategory</strong></li>
+<li><strong>Framework.models.News</strong></li>
+</ul>
+<pre><code class="lang-js"><span class="pl-c">// server/models/User.js</span>
+<span class="pl-c1">module</span>.exports = {
+  <span class="hljs-attr">options</span>: {
+    <span class="pl-c">// mongoose options here</span>
+    timestamps: <span class="pl-c1">true</span>
+    <span class="pl-c">// ...</span>
+  },
+  <span class="hljs-attr">schema</span>: {
+    <span class="pl-c">// define schema here</span>
+    name: <span class="pl-c1">String</span>,
+    <span class="hljs-attr">email</span>: {
+      <span class="hljs-attr">type</span>: <span class="pl-c1">String</span>,
+      <span class="hljs-attr">required</span>: <span class="pl-c1">true</span>,
+      <span class="hljs-attr">trim</span>: <span class="pl-c1">true</span>,
+      <span class="hljs-attr">unique</span>: <span class="pl-c1">true</span>,
+      <span class="hljs-attr">match</span>: <span class="hljs-regexp">/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/</span>
+    },
+    <span class="hljs-attr">password</span>: <span class="pl-c1">String</span>,
+    <span class="hljs-attr">gender</span>: {
+      <span class="hljs-attr">type</span>: <span class="pl-c1">String</span>,
+      <span class="hljs-attr">enum</span>: [<span class="pl-s">&quot;Male&quot;</span>, <span class="pl-s">&quot;Female&quot;</span>, <span class="pl-s">&quot;Other&quot;</span>]
+    },
+    <span class="pl-c">// .....</span>
+  },
+  <span class="pl-c">// define mongoose statics</span>
+  statics: {
+    <span class="hljs-attr">encryptPassword</span>: <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {},
+    <span class="hljs-attr">validatePassword</span>: <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {},
+  },
+  <span class="pl-c">// virtuals</span>
+  virtuals: {},
+
+  <span class="pl-c">// methods</span>
+  methods: {},
+
+  <span class="pl-c">// pre / post hooks</span>
+  <span class="pl-c">// [&apos;init&apos;, &apos;validate&apos;, &apos;save&apos;, &apos;remove&apos;]</span>
+  pre: {},
+  <span class="hljs-attr">post</span>: {},
+
+  <span class="pl-c">// queryHelpers</span>
+  queryHelpers: {},
+
+  <span class="pl-c">// indexes</span>
+  queryHelpers: {},
+
+};
+</code></pre>
+<pre><code class="lang-js"><span class="pl-c">// server/models/news/NewsCategory.js</span>
+<span class="pl-c1">module</span>.exports = {
+  <span class="hljs-attr">schema</span>: {
+    <span class="hljs-attr">name</span>: <span class="pl-c1">String</span>,
+    <span class="hljs-attr">description</span>: <span class="pl-c1">String</span>,
+    <span class="hljs-attr">image</span>: <span class="pl-c1">String</span>,
+  }
+};
+</code></pre>
+<pre><code class="lang-js"><span class="pl-c">// server/models/news/News.js</span>
+<span class="pl-c1">module</span>.exports = {
+  <span class="hljs-attr">schema</span>: {
+    <span class="hljs-attr">user</span>: {
+      <span class="hljs-attr">type</span>: Framework.mongoose.Schema.Types.ObjectId,
+      <span class="hljs-attr">model</span>: <span class="pl-s">&apos;User&apos;</span>,
+    },
+    <span class="hljs-attr">category</span>: {
+      <span class="hljs-attr">type</span>: Framework.mongoose.Schema.Types.ObjectId,
+      <span class="hljs-attr">model</span>: <span class="pl-s">&apos;NewsCategory&apos;</span>,
+    },
+    <span class="hljs-attr">title</span>: <span class="pl-c1">String</span>,
+    <span class="hljs-attr">description</span>: <span class="pl-c1">String</span>,
+    <span class="hljs-attr">content</span>: <span class="pl-c1">String</span>,
+    <span class="hljs-attr">image</span>: <span class="pl-c1">String</span>,
+  }
+};
+</code></pre>
+
+        </div>
+        <div class="footer-nav">
+          <div class="left"><a href="../configuration/middleware.html"><span class="title">Middlewares</span></a></div>
+          <div class="right"><a href="../mongoose/plugins.html"><span class="label">Next: </span><span class="title">Plugins</span></a></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

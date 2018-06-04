@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../assets/style.css?t=615badd5">
+    <script src="../assets/script.js?t=42463e55"></script>
+    <title>Middlewares - Named Framework</title>
+    <meta name="viewport" content="width=device-width">
+    <script>if (false || window.location.hostname.indexOf("docs.namedframework.com") === window.location.hostname.length - 23) {
+        (function(d,o,c,p,r,e,s){d['GoogleAnalyticsObject']=r;d[r]=d[r]||function(){(d[r].q=d[r].q||[]).push(arguments)},d[r].l=1*new Date();e=o.createElement(c),s=o.getElementsByTagName(c)[0];e.async=1;e.src=p;s.parentNode.insertBefore(e,s)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create',"UA-108060250-2",'auto')
+      }
+    </script>
+  </head>
+  <body class="-menu-visible">
+    <div class="doc-layout">
+      <div class="toggle menu-toggle js-menu-toggle"></div>
+      <div class="menu toc-menu">
+        <li class="menu-item -level-0 -parent">
+          <ul class="submenu">
+            <li class="menu-item -level-1"><a class="link title  link-index" href="../index.html">Named Framework</a>
+            </li>
+            <li class="menu-item -level-1 -parent"><span class="title">Getting started</span>
+              <ul class="submenu">
+                <li class="menu-item -level-2"><a class="link title  link-getting-startedquickstart" href="../getting-started/quickstart.html">Quickstart</a>
+                </li>
+                <li class="menu-item -level-2"><a class="link title  link-getting-startedinstall" href="../getting-started/install.html">Installation</a>
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item -level-1 -parent"><span class="title">Configuration</span>
+              <ul class="submenu">
+                <li class="menu-item -level-2"><a class="link title  link-configurationexpress" href="../configuration/express.html">Express</a>
+                </li>
+                <li class="menu-item -level-2"><a class="link title  link-configurationconfig-files" href="../configuration/config-files.html">Config Files</a>
+                </li>
+                <li class="menu-item -level-2"><a class="link title  link-configurationlocal-js" href="../configuration/local-js.html">Local Config</a>
+                </li>
+                <li class="menu-item -level-2"><a class="link title -active link-configurationmiddleware" href="../configuration/middleware.html">Middlewares</a>
+                  <ul class="headings heading-list">
+                    <li class="heading-item -depth-2"><a class="hlink link-configservermiddlewares.js" href="#configservermiddlewares.js">config/server/middlewares.js</a>
+                    </li>
+                    <li class="heading-item -depth-2"><a class="hlink link-declaring-middleware" href="#declaring-middleware">Declaring middleware</a>
+                    </li>
+                    <li class="heading-item -depth-2"><a class="hlink link-declaring-closure-middleware" href="#declaring-closure-middleware">Declaring closure middleware</a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item -level-1 -parent"><span class="title">Mongoose</span>
+              <ul class="submenu">
+                <li class="menu-item -level-2"><a class="link title  link-mongooseschema" href="../mongoose/schema.html">Schema</a>
+                </li>
+                <li class="menu-item -level-2"><a class="link title  link-mongooseplugins" href="../mongoose/plugins.html">Plugins</a>
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item -level-1 -parent"><span class="title">Routes</span>
+              <ul class="submenu">
+                <li class="menu-item -level-2"><a class="link title  link-routes" href="../routes/index.html">Create</a>
+                </li>
+                <li class="menu-item -level-2"><a class="link title  link-routesconfig" href="../routes/config.html">Configuration</a>
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item -level-1 -parent"><span class="title">Boot Scripts</span>
+              <ul class="submenu">
+                <li class="menu-item -level-2"><a class="link title  link-bootscripts" href="../boot/scripts.html">Create</a>
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item -level-1 -parent"><span class="title">Utils</span>
+              <ul class="submenu">
+                <li class="menu-item -level-2"><a class="link title  link-utils" href="../utils/index.html">Create</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </div>
+      <div class="body page-configurationmiddleware">
+        <div class="header-nav">
+          <div class="right"><a class="iconlink" href="https://github.com/namedframework/framework" data-title="namedframework/framework">
+              <!-- span.title Open in GitHub--><span class="icon -github"></span></a>
+          </div>
+        </div>
+        <div class="markdown-body"><h1 id="middleware-configuration">Middleware Configuration</h1>
+<h2 id="configservermiddlewares.js">config/server/middlewares.js</h2>
+<p>Use this file to define middleware for routes.</p>
+<pre><code class="lang-js"><span class="pl-c">// example</span>
+<span class="pl-c1">module</span>.exports = {
+  <span class="pl-c">// actual file at server/middlewares/setLocals</span>
+  <span class="pl-c">// use array for multiple middlewares</span>
+  <span class="pl-s">&apos;/&apos;</span>: [<span class="pl-s">&apos;setLocals&apos;</span>, <span class="pl-s">&apos;getLoginStatus&apos;</span>],
+
+  <span class="pl-c">// actual file at server/middlewares/user/isAuthenticated</span>
+  <span class="pl-s">&apos;/user&apos;</span>: <span class="pl-s">&apos;user/isAuthenticated&apos;</span>,
+
+  <span class="pl-c">// here special is passed as function parameter</span>
+  <span class="pl-s">&apos;/user/special&apos;</span>: <span class="pl-s">&apos;user/isAllowed special&apos;</span>,
+
+  <span class="pl-c">// actual file at server/middlewares/admin/isAuthenticated</span>
+  <span class="pl-s">&apos;/admin&apos;</span>: <span class="pl-s">&apos;admin/isAuthenticated&apos;</span>,
+};
+
+</code></pre>
+<h2 id="declaring-middleware">Declaring middleware</h2>
+<p>Create middleware file at <strong>server/middlewares/</strong>.</p>
+<pre><code class="lang-js"><span class="pl-c">// server/middlewares/setLocals.js</span>
+<span class="pl-c1">module</span>.exports = <span class="hljs-function"><span class="pl-k">function</span> (<span class="hljs-params">req, res, next</span>) </span>{
+  <span class="pl-c">// url</span>
+  res.locals.url = req.originalUrl;
+
+  <span class="pl-c">// flash messages</span>
+  res.locals.flash = {
+    <span class="hljs-attr">info</span>: req.flash(<span class="pl-s">&apos;info&apos;</span>),
+    <span class="hljs-attr">error</span>: req.flash(<span class="pl-s">&apos;error&apos;</span>),
+    <span class="hljs-attr">warning</span>: req.flash(<span class="pl-s">&apos;warning&apos;</span>),
+    <span class="hljs-attr">success</span>: req.flash(<span class="pl-s">&apos;success&apos;</span>),
+  };
+  <span class="pl-k">return</span> next();
+};
+
+</code></pre>
+<h2 id="declaring-closure-middleware">Declaring closure middleware</h2>
+<pre><code class="lang-js"><span class="pl-c">// server/middlewares/user/isAllowed.js</span>
+<span class="pl-c1">module</span>.exports = {
+  <span class="hljs-attr">run</span>: <span class="pl-c1">true</span>,
+  <span class="hljs-attr">middleware</span>: <span class="hljs-function"><span class="pl-k">function</span> (<span class="hljs-params">name</span>) </span>{
+    <span class="pl-k">return</span> <span class="hljs-function"><span class="pl-k">function</span> (<span class="hljs-params">req, res, next</span>) </span>{
+      <span class="pl-k">switch</span> (name) {
+        <span class="pl-k">case</span> <span class="pl-s">&quot;special&quot;</span>:
+          <span class="pl-k">return</span> !!req.user.isSpecial;
+          <span class="pl-k">break</span>;
+        <span class="pl-k">default</span>:
+          <span class="pl-k">return</span> <span class="pl-c1">false</span>;
+      }
+    }
+  },
+};
+
+</code></pre>
+
+        </div>
+        <div class="footer-nav">
+          <div class="left"><a href="../configuration/local-js.html"><span class="title">Local Config</span></a></div>
+          <div class="right"><a href="../mongoose/schema.html"><span class="label">Next: </span><span class="title">Schema</span></a></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
